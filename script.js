@@ -36,3 +36,13 @@ document.getElementById('inputValue').addEventListener('keydown', function(event
         convertArea();
     }
 });
+
+// Add an event listener to the input field
+var inputField = document.getElementById("inputValue");
+inputField.addEventListener("keyup", function(event) {
+    // Check if the key pressed is Enter (key code 13)
+    if (event.keyCode === 13) {
+        // If Enter key is pressed, call the convertArea function
+        convertArea();
+    }
+});
