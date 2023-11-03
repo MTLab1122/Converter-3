@@ -29,20 +29,16 @@ function convertArea() {
     document.getElementById('result').textContent = `${inputValue} ${activeTab === 'yardTab' ? 'Yards' : 'Square Feet'} is equal to ${convertedValue.toFixed(2)} ${unit}.`;
 }
 
+// Prevent form submission and handle the conversion
+document.getElementById('areaForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    convertArea();
+});
+
+// Add an event listener to the input field for "Enter" key press
 document.getElementById('inputValue').addEventListener('keydown', function(event) {
     // Check if the pressed key is "Enter" (key code 13)
     if (event.keyCode === 13) {
-        // Call the convertTemperature function if "Enter" key is pressed
-        convertArea();
-    }
-});
-
-// Add an event listener to the input field
-var inputField = document.getElementById("inputValue");
-inputField.addEventListener("keyup", function(event) {
-    // Check if the key pressed is Enter (key code 13)
-    if (event.keyCode === 13) {
-        // If Enter key is pressed, call the convertArea function
         convertArea();
     }
 });
