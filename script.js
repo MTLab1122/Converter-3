@@ -8,7 +8,7 @@ function showTab(activeTab, inactiveTab) {
 function convertArea() {
     const inputValue = parseFloat(document.getElementById('inputValue').value);
     if (isNaN(inputValue)) {
-        alert('Invalid input. Please enter a valid number.');
+        
         return;
     }
 
@@ -42,3 +42,13 @@ document.getElementById('inputValue').addEventListener('keydown', function(event
         convertArea();
     }
 });
+
+
+function convertArea() {
+    const inputValue = document.getElementById('inputValue').value.trim();
+    if (!inputValue) {
+        document.getElementById('inputValue').setCustomValidity('Please fill out this field.');
+        document.getElementById('inputValue').reportValidity();
+        return;
+    }
+}
